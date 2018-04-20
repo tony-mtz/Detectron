@@ -7,10 +7,10 @@ To train Faster R-CNN using Pascal 2007, follow the instructions on installing t
 
 Once you have trained with pascal use infer_simple.py to evaluate your own images.
 
-python2 infer_simple.py --cfg yaml_file.yaml \
---output-dir /some/dir \
---wts /trained/model_final.pkl \
---ds voc \
+python2 infer_simple.py --cfg yaml_file.yaml \\
+--output-dir /some/dir \\
+--wts /trained/model_final.pkl \\
+--ds voc \\
 /path/to/images
 
 
