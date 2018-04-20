@@ -1,7 +1,7 @@
 # Detectron
 ..Back to original Repo [DETECTRON](https://github.com/facebookresearch/Detectron)
 
-#Detectron for Faster R-CNN using Pascal 2007
+# Detectron for Faster R-CNN using Pascal 2007
 
 To train Faster R-CNN using Pascal 2007, follow the instructions on installing the Pascal dataset from [here](https://github.com/facebookresearch/Detectron/blob/master/lib/datasets/data/README.md).
 
