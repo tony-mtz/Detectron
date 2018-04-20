@@ -45,3 +45,14 @@ def get_coco_dataset():
     ]
     ds.classes = {i: name for i, name in enumerate(classes)}
     return ds
+
+def get_voc2007_dataset():
+    """A dummy COCO dataset that includes only the 'classes' field."""
+    ds = AttrDict()
+    classes = [
+        '__background__', 'aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus',
+        'car', 'cat', 'chair', 'cow', 'diningtable', 'dog', 'horse', 'motorbike', 
+        'person', 'pottedplant', 'sheep', 'sofa', 'train', 'tvmonitor'
+    ]
+    ds.classes = {i: name for i, name in enumerate(classes)}
+    return ds

@@ -83,8 +83,16 @@ def parse_args():
         type=str
     )
     parser.add_argument(
+        '--ds', 
+        dest = 'dataset',
+        help='dataset for inference',
+        default=None,
+        type=str
+    )
+    parser.add_argument(
         'im_or_folder', help='image or folder of images', default=None
     )
+    
     if len(sys.argv) == 1:
         parser.print_help()
         sys.exit(1)
@@ -98,7 +106,10 @@ def main(args):
     args.weights = cache_url(args.weights, cfg.DOWNLOAD_CACHE)
     assert_and_infer_cfg(cache_urls=False)
     model = infer_engine.initialize_model_from_cfg(args.weights)
-    dummy_coco_dataset = dummy_datasets.get_coco_dataset()
+    if args.dataset == 'voc':
+        dummy_coco_dataset = dummy_datasets.get_voc2007_dataset()
+    else:
+        dummy_coco_dataset = dummy_datasets.get_coco_dataset()
 
     if os.path.isdir(args.im_or_folder):
         im_list = glob.iglob(args.im_or_folder + '/*.' + args.image_ext)
